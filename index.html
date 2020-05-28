@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JC2</title>
 
-    <!-- Carregando Bootstrap CSS -->
+  <!-- Carregando Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
   <!-- Configurando Responsivo Bootstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+
 <body style="padding:20px;">
-  <!-- Carregar SCRIPT com funções -->
-  <script type="text/javascript" src="js.js"></script>
+
+  <h2>CMYK Calculator</h2>
+
+  <div id="resultado" style="width:150px;height:150px;border:1px solid #ccc;"></div>
+  <input type="text">
+  <p class="rgb"></p>
+  <p class="hex"></p>
+  <p class="hsl"></p>
+  <hr>
+  <div class="container" id="muda_cores">
+    <div class="col-3">
+      <label>C<input type="text" id="ciano_valor"></label>
+      <input type="range" name="ciano" id="range_ciano" min="0" max="255">
+    </div>
+    <div class="col-3">
+      <label>M<input type="text" id="magenta_valor"></label>
+      <input type="range" name="magenta" id="range_magenta" min="0" max="255">
+    </div>
+    <div class="col-3">
+      <label>Y<input type="text" id="yellow_valor"></label>
+      <input type="range" name="yellow" id="range_yellow" min="0" max="255">
+    </div>
+    <div class="col-3">
+      <label>K<input type="text" id="black_valor"></label>
+      <input type="range" name="black" id="range_black" min="0" max="255">
+    </div>
 
 
-<h2>CMYK Calculator</h2>
 
-<div id="resultado" style="width:150px;height:150px;border:1px solid #ccc;"></div>
-<input type="text">
-<p class="rgb"></p>
-<p class="hex"></p>
-<p class="hsl"></p>
-<hr>
-<label>C<input type="text"></label> <input type="range"> <br>
-<label>M<input type="text"></label> <input type="range"><br>
-<label>Y<input type="text"></label> <input type="range"><br>
-<label>K<input type="text"></label> <input type="range"><br>
-
-
-
+  </div>
   <!-- Carregando Bootstrap com JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -41,5 +55,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+  <!-- Carregar SCRIPT com funções -->
+  <script type="text/javascript" src="js.js"></script>
 </body>
+
 </html>
