@@ -25,9 +25,30 @@ document.getElementById('muda_cores').oninput = function () {
   //poem a cor no input e guarda variavel
   bg = document.getElementById("cmykcss").value = "cmyk(" + ciano_final + "%, " + magenta_final + "%, " + yellow_final + "%, " + black_final + "%)"
 
+  //converte cmyk to rgb
+  function cmykToRGB(c, m, y, k) {
+
+    function padZero(str) {
+      return "000000".substr(str.length) + str
+    }
+
+    var cyan = (c * 255 * (1 - k)) << 16;
+    var magenta = (m * 255 * (1 - k)) << 8;
+    var yellow = (y * 255 * (1 - k)) >> 0;
+
+    var black = 255 * (1 - k);
+    var white = black | black << 8 | black << 16;
+
+    var color = white - (cyan | magenta | yellow);
+
+    return ("#" + padZero(color.toString(16)));
+  }
+
   //muda a cor de fundo da div baseado na variavel
   const divcor = document.querySelector("#exibir_cor");
-  divcor.setAttribute('style', "width:300px;height:300px;background: " + bg);
+  divcor.setAttribute('style', "width:300px;height:300px;background-color: " + cmykToRGB(ciano_final, magenta_final, yellow_final, black_final));
+
+
 
   console.log(bg)
 
